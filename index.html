@@ -1,0 +1,18 @@
+<html>
+  <head></head>
+  <body>
+    
+  </body>
+  <script>
+    function enviar(total, porcentaje) {
+      const comision = porcentaje * total / 100;
+      console.log(`Se envian ${total}. Se retiran ${total - comision}. La comision es de ${comision} (${porcentaje}%)`)
+    }
+
+    function recibir(total, porcentaje){
+      const enviar = 100 * total / (100-porcentaje);
+      const comision = (porcentaje * enviar) / 100;
+      console.log(`Se envian ${enviar}. Se retiran ${total}. La comision es de ${comision} (${porcentaje}%)`);
+    }
+  </script>
+</html>
