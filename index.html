@@ -1,18 +1,40 @@
 <html>
   <head></head>
   <body>
-    
+    <h1>Calculator</h1>
+    <div>
+      <h3>Quiero enviar</h3>
+      <label for="enviar">Monto a enviar</label>
+      <input type="number" id="enviar">
+      <label for="comision_enviar">Comision</label>
+      <input type="number" id="comision_enviar">
+      <button onclick="enviar()">Calcular</button>
+    </div>
+     <div>
+      <h3>Quiero recibir</h3>
+      <label for="recibir">Monto a recibir</label>
+      <input type="number" id="recibir">
+      <label for="comision_recibir">Comision</label>
+      <input type="number" id="comision_recibir">
+      <button onclick="recibir()">Calcular</button>
+    </div>
   </body>
   <script>
-    function enviar(total, porcentaje) {
+    function enviar() {
+      const total = document.getElementById('enviar').value;
+      const porcentaje = document.getElementById('comision_enviar').value;
       const comision = porcentaje * total / 100;
-      console.log(`Se envian ${total}. Se retiran ${total - comision}. La comision es de ${comision} (${porcentaje}%)`)
+      const resultado = `Se envian ${total}. Se retiran ${total - comision}. La comision es de ${comision} (${porcentaje}%)`;
+      alert(resultado);
     }
 
-    function recibir(total, porcentaje){
+    function recibir(){
+       const total = document.getElementById('recibir').value;
+      const porcentaje = document.getElementById('comision_recibir').value;
       const enviar = 100 * total / (100-porcentaje);
       const comision = (porcentaje * enviar) / 100;
-      console.log(`Se envian ${enviar}. Se retiran ${total}. La comision es de ${comision} (${porcentaje}%)`);
+      const resultado = `Se envian ${enviar}. Se retiran ${total}. La comision es de ${comision} (${porcentaje}%)`;
+      alert(resultado);
     }
   </script>
 </html>
